@@ -28,6 +28,9 @@ h3 {
 	width: 0 auto;
 }
 
+h6 {
+  color: white;
+}
 button {
 	color: black;
 }
@@ -35,6 +38,7 @@ button {
 label {
 	background-color: white;
 	position: relative;
+  width: 0 auto;
 }
 
 #results {

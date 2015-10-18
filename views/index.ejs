@@ -15,13 +15,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="server.js"></script>
+    <script src="../server.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <!-- HEADERS -->
+          <h6>Sanity Check - this is the EJS file!</h6>
           <h1>Welcome to my fabulous micro-blog!</h1>
           <h3>Post anything that pops into your mind.</h3>
           <br>
@@ -31,7 +32,7 @@
             <!-- INPUT BOX AND SUBMIT BUTTON -->
             <p></p>
             <form method="POST">
-              <input type="text" id="inputBox" size="75" maxlength="150" placeholder="Top of mind at the moment..."></text> <!-- name="postText"  -->
+              <input type="text" id="inputBox" size="100" maxlength="150" placeholder="Top of mind at the moment..."></text> <!-- name="postText"  -->
               <br><br>
               <input type="submit" id="submitButton" value="Share with the world">
             </form>
@@ -43,12 +44,11 @@
               <ul class="postsToPresent"></ul>
 
               <% for(var i=0; i<posts.length; i++) { %>
-        <li class='list-group-item'>
-          <%= posts[i].name %>
-          <span class='label label-default'><%= foods[i].yumminess %></span>
-        </li>
-      <% } %>
-
+                <li class='list-group-item'>
+                <%= posts[i].name %>
+                  <span class='label label-default'><%= posts[i] %></span>
+                </li>
+              <% } %>
 
             </div>
           </container>
