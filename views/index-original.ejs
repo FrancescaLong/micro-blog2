@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   <!-- APPLICATION SCRIPTS -->
-  <script src="base.js"></script>
+  <script src="../server.js"></script>
 </head>
 <body>
   <div id="page-wrapper" class="container">
@@ -32,8 +32,8 @@
         <container>
           <!-- INPUT BOX AND SUBMIT BUTTON -->
           <p></p>
-          <form class="form-inline" id="new-post-form">
-            <input name="blogPosts" type="text" class="form-control" id="inputBox" size="100" maxlength="130" placeholder="Top of mind at the moment..."></text> <!-- name="postText"  -->
+          <form method="POST" class="form-inline" id="new-post-form">
+            <input name="posts" type="text" class="form-control" id="inputBox" size="100" maxlength="130" placeholder="Top of mind at the moment..."></text> <!-- name="postText"  -->
             <br><br>
             <input type="submit" id="submitButton" value="Share with the world">
           </form>
@@ -41,28 +41,24 @@
         <br><br>
 
 
-        <!-- list of blogPosts -->
-        <ul class="list-group" id="blogPosts-ul">
-          <% for(var i=0; i<blogPosts.length; i++) { %>
-          <li class='list-group-item'>
-            <%= blogPosts[i].name %>
-            <span class='label label-default'><%= blogPosts[i] %></span>
-            <!-- delete button -->
-            <button data-id="<%=blogPosts[i].id%>" type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-            <!-- form to update food -->
-            <form class="form-inline edit" data-id=<%= blogPosts[i].id %>>
-              <input name="post" type="text" class="form-control" placeholder="Updated your post">
-              <input type="submit" class="btn btn-default" value="Update post">
-            </form>
-          </li>
-          <% } %>  
-        </ul>
+        <!-- list of posts -->
 
+          <container>
+            <label class="results" ></label>
+            <div class="list-group">
+              <ul class="postsToPresent"></ul>
 
-
+              <% for(var i=0; i<posts.length; i++ ) { %>
+                <li class='list-group-item'>
+                <%= posts[i].name %>
+                  <span class='label label-default'><%= posts[i] %></span>
+                </li>
+              <% } %>
+            -->
           </div>
         </container>
       </div>
     </div>
+  </div>
 </body>
 </html>
